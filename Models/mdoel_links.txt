@@ -1,0 +1,2 @@
+https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF/blob/7ea9e8b35ded6f4842a331dd786619779fb20442/nous-hermes-llama2-13b.Q4_0.gguf
+https://huggingface.co/caliex/all-MiniLM-L6-v2-f16.gguf
