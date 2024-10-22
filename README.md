@@ -16,23 +16,22 @@ Before starting this project, ensure that the LLM model has been downloaded from
 ```
 pip install gpt4all
 ```
-
 ### Text Parser
-  ## Html.py
+  #### Html.py
   Obtain text from websites.
-  ## PDF_to_TXT.py
+  #### PDF_to_TXT.py
   Convert PDF files to TXT files and split the text into paragraphs.
-  ## PDF_Processing.py 
+  #### PDF_Processing.py 
   Remove redundant information not relevant to the text to save computing resources.
 
 ### Text Extraction
-  ## Embedding_and Similarity.py
+  #### Embedding_and Similarity.py
   Embed the text into a high-dimensional space matrix and calculate the cosine similarity between the paragraphs and the sample text.
-  ## Filter.py
+  #### Filter.py
   Keep the paragraphs that contain the synthesis parameters and filter out irrelevant content.
-  ## Abstract.py
+  #### Abstract.py
   Abstract the filtered paragraphs, normalize the text, and refine the connections between information.
-  ## Summerized.py
+  #### Summerized.py
   Summarize the synthesis parameters into a table.
 
 
