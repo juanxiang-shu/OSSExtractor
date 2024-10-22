@@ -17,7 +17,7 @@ Before starting this project, ensure that the LLM model has been downloaded from
 pip install gpt4all
 ```
 
-## Text Parser
+### Text Parser
   ## Html.py
   Obtain text from websites.
   ## PDF_to_TXT.py
@@ -25,7 +25,7 @@ pip install gpt4all
   ## PDF_Processing.py 
   Remove redundant information not relevant to the text to save computing resources.
 
-## Text Extraction
+### Text Extraction
   ## Embedding_and Similarity.py
   Embed the text into a high-dimensional space matrix and calculate the cosine similarity between the paragraphs and the sample text.
   ## Filter.py
