@@ -2,6 +2,7 @@ import PyPDF2
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+import nlp_knowledge
 import re
 
 # Load the English model of Spacy
