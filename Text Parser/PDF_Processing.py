@@ -1,16 +1,11 @@
-from gpt4all import GPT4All
 import PyPDF2
 import pandas as pd
-import nlp_knowledge
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
-import os
 import re
 
 # Load the English model of Spacy
 nlp = spacy.load("en_core_web_sm")
-
 
 def get_txt_from_pdf(pdf_file):
     data = []
