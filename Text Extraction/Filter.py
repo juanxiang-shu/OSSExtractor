@@ -8,7 +8,7 @@ import numpy as np
 import os
 
 
-def Model_2(df):
+def Model_1(df):
     model = GPT4All('nous-hermes-llama2-13b.Q4_0.gguf', allow_download=False)
     questions = [
         "Question: Does this section cover the types of surface chemical reactions or experimental studies on the formation of molecules on surfaces? Answer 'Yes' or 'No'. \nAnswer:"
