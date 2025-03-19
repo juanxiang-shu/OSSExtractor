@@ -36,3 +36,29 @@ def save_df_to_text(df_filtered, file_path):
     with open(file_path, 'w', encoding='utf-8') as file:
         for index, row in df_filtered.iterrows():
             file.write(row['content'] + '\n\n')  # Writing content and a blank line
+
+def process_text_file_for_filter(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    current_segment = []
+    segments = []
+    for line in lines:
+        if line.strip():
+            current_segment.append(line.strip())
+        else:
+            if current_segment:
+                segments.append(' '.join(current_segment))
+                current_segment = []
+    if current_segment:
+        segments.append(' '.join(current_segment))
+
+    df = pd.DataFrame(segments, columns=['content'])
+    df_filtered = Model_2(df)
+
+    base_name = os.path.basename(file_path)
+    # Remove 'Processed_' prefix and add 'Embedding_' prefix
+    new_name = 'Filter_' + base_name.replace('Embedding_', '')
+    output_file_path = os.path.join(os.path.dirname(file_path), new_name)
+    save_df_to_text(df_filtered, output_file_path)
+
+    return output_file_path
