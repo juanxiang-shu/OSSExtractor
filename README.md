@@ -1,4 +1,4 @@
-# OSSExtract
+# OSSExtractor
 Synthesis parameter extraction for on-surface synthesis literature.
 
 OSSExtract extracts information from text and identifies the following parameters:
@@ -11,7 +11,7 @@ OSSExtract extracts information from text and identifies the following parameter
 
 OSSExtract uses a local large language model to extract on-surface reaction parameters instead of relying on an online LLM or an API. The LLM model can be downloaded from [Nous-Hermes-Llama2-GGUF](https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGUF) and [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2). There are also other available models to choose from.
 
-## Using the OSSExtract
+## Using the OSSExtractor
 Before starting this project, ensure that the LLM model has been downloaded from the above websites. To install the ecosystem, use the command below:
 ```
 pip install gpt4all
@@ -35,7 +35,7 @@ pip install gpt4all
   Summarize the synthesis parameters into a table.
 
 
-## Running OSSExtract
+## Running OSSExtractor
 1. Set "allow_download=False" to use the downloaded model of your choice.
 2. Run the Python files in order to extract the parameters.
 
