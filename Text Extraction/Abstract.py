@@ -20,3 +20,27 @@ def Model_2(df):
     df['abstract'] = pd.Series(abstract)
 
     return df
+
+def process_text_file_for_abstract(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    current_segment = []
+    segments = []
+    for line in lines:
+        if line.strip():
+            current_segment.append(line.strip())
+        else:
+            if current_segment:
+                segments.append(' '.join(current_segment))
+                current_segment = []
+    if current_segment:
+        segments.append(' '.join(current_segment))
+
+    df = pd.DataFrame(segments, columns=['content'])
+    df_final = Model_2(df)
+
+    base_name = os.path.basename(file_path)
+    new_name = 'Abstract_' + base_name.replace('Filter_', '')
+    output_file_path = os.path.join(os.path.dirname(file_path), new_name)
+    save_df_to_text(df_final, output_file_path)
+    return output_file_path
