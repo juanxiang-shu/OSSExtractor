@@ -2,9 +2,6 @@ from gpt4all import GPT4All
 import PyPDF2
 from PyPDF2 import PdfReader
 import pandas as pd
-import nlp_knowledge
-from sentence_transformers import SentenceTransformer, util
-from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import os
 import re
@@ -47,11 +44,8 @@ def process_text_file_for_embedding(file_path):
 
         df = pd.DataFrame(segments, columns=['content'])
         fixed_text = (
-            "The new COF was fabricated by first synthesizing two square planar tetratopic building blocks (5,10,15,20-tetrakis(4-aminophenyl)porphyrin (TAPP) and 5,10,15,20-tetrakis(4-formylphenyl)porphyrin (TFPP))."
-            "5-(4-bromophenyl)-10,15,20-triphenylporphyrin (Br-TPP) and 4-isocyano-1,1′-biphenyl (ICBP) were selected as the precursors for the on-surface reaction on Au(111)."
-            "The synthesis of single-layer COF-420 was carried out on a Au(111) surface in ultrahigh vacuum (UHV). TFPP molecules were first deposited onto the surface via thermal evaporation, followed by deposition of TAPP molecules. The adsorbed precursors were then gradually annealed to 180 °C and held at that temperature for 45 min to induce the condensation reaction that results in imine bond formation (Figure 1a). Figure 1b shows an STM topographic image of the resulting single-layer COF-420."
-            "After the successive deposition of Br6-B10, ICBP and Pd and annealing at 403 K for 1 h, dendrimer 4 with 12 symmetrical antennae was generated on Au(111) surface."
-        )
+            "filter_text": "filter_text"
+            )
         df_with_embeddings = add_embedding_and_cosine_similarity(df, fixed_text)
         df_top_neighbors = select_top_neighbors(df_with_embeddings)
 
