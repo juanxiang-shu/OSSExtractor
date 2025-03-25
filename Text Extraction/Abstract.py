@@ -20,6 +20,11 @@ def Model_2(df):
     df['abstract'] = pd.Series(abstract)
 
     return df
+    
+def save_df_to_text(df_filtered, file_path):
+    with open(file_path, 'w', encoding='utf-8') as file:
+        for index, row in df_filtered.iterrows():
+            file.write(row['abstract'] + '\n\n')  # Writing content and a blank line
 
 def process_text_file_for_abstract(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
