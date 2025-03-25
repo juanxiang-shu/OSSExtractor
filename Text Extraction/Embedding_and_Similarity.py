@@ -44,7 +44,7 @@ def process_text_file_for_embedding(file_path):
 
         df = pd.DataFrame(segments, columns=['content'])
         fixed_text = (
-            "filter_text": "filter_text"
+            "filter_text": "the example of your filter_text to provide to the large language model"
             )
         df_with_embeddings = add_embedding_and_cosine_similarity(df, fixed_text)
         df_top_neighbors = select_top_neighbors(df_with_embeddings)
