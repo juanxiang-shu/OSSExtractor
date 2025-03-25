@@ -2,15 +2,15 @@ import pandas as pd
 import os
 import PDF_TXT
 from TXT_Processing import process_text_file_for_processing
-from Embedding import process_text_file_for_embedding
+from Embedding_and_Similarity import process_text_file_for_embedding
 from Filter import process_text_file_for_filter
 from Abstract import process_text_file_for_abstract
 from Summerized import process_text_file_for_summerized
 
 pdf_files = [
-'path/your/file'
+'path/your/file_1',...'path/your/file_n'
 ]
-base_output_dir = 'path/your/file'  
+base_output_dir = 'path/your/folder'  
 output_files = PDF_to_TXT.save_contents_to_specific_folders(pdf_files, base_output_dir)
 
 total_filtered_count = 0
